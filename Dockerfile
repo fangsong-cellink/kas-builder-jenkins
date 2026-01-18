@@ -7,7 +7,8 @@ RUN groupadd -g 1000 jenkins && \
     git clone https://github.com/siemens/kas.git && \
     cd kas && \
     git checkout 3.3 && \
-    pip3 install .
+    pip3 install . && \
+    git config --system url."https://github.com/".insteadOf git://github.com/
 USER jenkins
 ENV LANG=en_US.UTF-8
 WORKDIR /home/jenkins
